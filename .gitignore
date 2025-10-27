@@ -1,0 +1,14 @@
+# Virtual Environment
+/.venv
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+
+# Generated database
+*.db
+
+# Generated mock data
+*.csv

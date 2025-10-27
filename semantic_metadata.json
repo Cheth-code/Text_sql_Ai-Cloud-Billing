@@ -1,0 +1,142 @@
+{
+  "aws_cost_usage": [
+    {
+      "name": "EffectiveCost",
+      "type": "NUMERIC",
+      "category": "Metric",
+      "description": "The amortized cost after all discounts. This is the 'true cost' of the resource.",
+      "sample_values": [3.89, 4.61, 3.06, 3.52, 4.16],
+      "aggregate_function": "SUM",
+      "expert_guidance": {
+        "when_to_use": "Preferred metric for all cost analysis and FinOps dashboards.",
+        "how_to_use": "Always use SUM(EffectiveCost) to report on costs."
+      }
+    },
+    {
+      "name": "UsageAmount",
+      "type": "NUMERIC",
+      "category": "Metric",
+      "description": "The volume of usage consumed, in the unit specified by UsageUnit.",
+      "sample_values": [12.0, 24, 720],
+      "aggregate_function": "SUM",
+      "expert_guidance": {
+        "when_to_use": "To measure the quantity of a service used, e.g., 'hours' or 'GB'.",
+        "how_to_use": "Use SUM(UsageAmount) to get total consumption."
+      }
+    },
+    {
+      "name": "ServiceName",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "The name of the AWS service (e.g., 'Amazon EC2', 'Amazon S3').",
+      "sample_values": ["Amazon Elastic Compute Cloud", "Amazon Simple Storage Service"],
+      "expert_guidance": {
+        "when_to_use": "For filtering or grouping costs by service.",
+        "how_to_use": "Use in a GROUP BY clause or a WHERE clause (e.g., WHERE ServiceName = 'Amazon S3')."
+      }
+    },
+    {
+      "name": "RegionName",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "The display name of the AWS region where the resource is located.",
+      "sample_values": ["us-west-2", "eu-west-1", "us-east-1"],
+      "expert_guidance": {
+        "when_to_use": "For filtering or grouping costs by geographical region.",
+        "how_to_use": "Use in a GROUP BY clause or a WHERE clause. Filter out NULL values if necessary."
+      }
+    },
+    {
+      "name": "BillingPeriodStart",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "The inclusive start date of the billing period in YYYY-MM-DD format.",
+      "sample_values": ["2025-09-09", "2025-10-08", "2025-10-06", "2025-10-20"],
+      "expert_guidance": {
+        "when_to_use": "For daily trend analysis.",
+        "how_to_use": "Use substr(BillingPeriodStart, 1, 10) to get the date. Do NOT use strftime()."
+      }
+    },
+    {
+      "name": "UsageType",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "Describes the specific usage details, e.g., 'BoxUsage:t3.micro'.",
+      "sample_values": ["BoxUsage:t3.micro", "TimedStorage-ByteHrs"],
+      "expert_guidance": {
+        "when_to_use": "To find usage by instance type or storage class.",
+        "how_to_use": "For EC2 instance types, use a query like: WHERE UsageType LIKE '%BoxUsage%'"
+      }
+    }
+  ],
+  "azure_cost_usage": [
+    {
+      "name": "EffectiveCost",
+      "type": "NUMERIC",
+      "category": "Metric",
+      "description": "The amortized cost after all discounts. This is the 'true cost' of the resource.",
+      "sample_values": [3.58, 1.19, 1.25, 0.96, 2.16],
+      "aggregate_function": "SUM",
+      "expert_guidance": {
+        "when_to_use": "Preferred metric for all cost analysis.",
+        "how_to_use": "Always use SUM(EffectiveCost) to report on costs."
+      }
+    },
+    {
+      "name": "UsageAmount",
+      "type": "NUMERIC",
+      "category": "Metric",
+      "description": "The volume of usage consumed.",
+      "sample_values": [10.0, 24, 50],
+      "aggregate_function": "SUM",
+      "expert_guidance": {
+        "when_to_use": "To measure the quantity of a service used.",
+        "how_to_use": "Use SUM(UsageAmount) to get total consumption."
+      }
+    },
+    {
+      "name": "ServiceName",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "The name of the Azure service (e.g., 'Virtual Machines', 'Storage').",
+      "sample_values": ["Azure SQL Database", "Virtual Machines", "Storage"],
+      "expert_guidance": {
+        "when_to_use": "For filtering or grouping costs by service.",
+        "how_to_use": "Use in a GROUP BY clause or a WHERE clause."
+      }
+    },
+    {
+      "name": "ResourceLocation",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "The display name of the Azure region where the resource is located.",
+      "sample_values": ["East US", "West Europe", "Southeast Asia"],
+      "expert_guidance": {
+        "when_to_use": "For filtering or grouping costs by geographical region.",
+        "how_to_use": "Use in a GROUP BY clause or a WHERE clause."
+      }
+    },
+    {
+      "name": "UsageDateTime",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "The inclusive start date of the usage in YYYY-MM-DD format.",
+      "sample_values": ["2025-09-10", "2025-10-21", "2025-10-11", "2025-09-21"],
+      "expert_guidance": {
+        "when_to_use": "For daily trend analysis.",
+        "how_to_use": "Use substr(UsageDateTime, 1, 10) to get the date. Do NOT use strftime()."
+      }
+    },
+    {
+      "name": "MeterCategory",
+      "type": "TEXT",
+      "category": "Dimension",
+      "description": "The top-level category for the service, e.g., 'Virtual Machines'.",
+      "sample_values": ["Virtual Machines", "Storage"],
+      "expert_guidance": {
+        "when_to_use": "To find costs for broad categories like 'Compute' or 'Storage'.",
+        "how_to_use": "Use in a GROUP BY clause or a WHERE clause."
+      }
+    }
+  ]
+}
