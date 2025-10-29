@@ -122,7 +122,7 @@ class QueryResponse(BaseModel):
     question: str
     selected_table: str
     sql_query: str
-    query_result: list
+    query_result: list 
     descriptive_answer: str
 
 @app.post("/query", response_model=QueryResponse)
