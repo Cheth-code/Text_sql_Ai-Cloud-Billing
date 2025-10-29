@@ -1,34 +1,113 @@
-# Text2SQL Cloud Cost Engine
+# 🧠 Text2SQL Cloud Cost Engine  
 
-This project is a Text-to-SQL system that allows a user to ask natural language questions about mock AWS and Azure billing data. It uses a semantic metadata layer to provide expert context to an LLM, enabling it to generate accurate SQLite queries.
+*A beginner-friendly AI project to query cloud cost data using natural language.*
 
-## Architecture of the project
-<img width="1529" height="826" alt="diagram-export-27-10-2025-11_28_33" src="https://github.com/user-attachments/assets/5f010539-4ce1-42a0-a62f-b7f34592845a" />
+---
 
+## 📘 Overview
 
-The project is served in two parts:
-1.  **FastAPI Backend:** A robust API that handles all the logic (as required by the assignment).
-2.  **Streamlit Chat UI:** A user-friendly, conversational frontend that communicates with the FastAPI backend.
+This project is an intelligent **Text-to-SQL engine** that lets you ask questions like:
 
-## How to Run This Project
+> “What was my AWS EC2 cost last month?”
+
+and get structured answers directly from mock **AWS** and **Azure billing data**.
+
+It uses:
+
+- **FastAPI** for the backend (handles AI + SQL logic)  
+- **Streamlit** for the chat interface  
+- **SQLite** for the database  
+- **LLM (Language Model)** to convert your questions into SQL queries  
+- **Semantic Metadata Layer** to guide the model with expert cloud cost context  
+
+---
+
+## 🏗️ Project Architecture
+
+<img width="1529" height="826" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/5f010539-4ce1-42a0-a62f-b7f34592845a" />
+
+---
+
+## 🧰 Tech Stack
+
+| Component | Technology |
+|------------|-------------|
+| Backend | FastAPI |
+| Frontend | Streamlit |
+| Database | SQLite |
+| AI Engine | OpenAI / LLM via LangChain |
+| Metadata Profiling | Pandas Profiling / YData |
+| Deployment | Localhost |
+
+---
+
+## 🚀 How to Run This Project (Step-by-Step for Beginners)
+
+### 🪜 1. Clone the Repository
+
+First, copy the project code to your computer.
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/Cheth-code/Text_sql_Ai-Cloud_Billing.git
-cd Text_sql_Ai-Cloud_Billing
-
-# 2. Create and activate a virtual environment
+git clone https://github.com/Cheth-code/Text_sql_Ai-Cloud-Billing.git
+cd Text_sql_Ai-Cloud-Billing
+````
+### 🧱 2. Create and Activate a Virtual Environment
+🐧 On Linux/macOS:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+````
+🪟 On Windows:
+```bash
 python -m venv venv
-source venv/bin/activate       # on Linux/macOS
-venv\Scripts\activate          # on Windows
-
-# 3. Install dependencies
+venv\Scripts\activate
+````
+### 📦 3. Install Dependencies
+This installs all the required Python libraries listed in requirements.txt.
+```bash
 pip install -r requirements.txt
+````
+### ⚙️ 4. Run the Backend (FastAPI)
+This launches the backend API, which processes questions and returns SQL results.
 
-# 4. Run app.py file
+Option 1 (simpler alternative):
+```bash
 python -m app
+````
+Option 2 (If you have uv installed on your machine):
+```bash
 uvicorn app:app --reload
-# running on http://localhost:8501
-
-# 5. Now the frontend by using Streamlit
+````
+Once it’s running, you should see something like:
+```bash
+Application running on http://127.0.0.1:8000
+````
+### 💬 5. Run the Frontend (Streamlit)
+This starts the chat-style user interface that talks to the FastAPI backend.
+```bash
 streamlit run chat_app.py
+````
+Now, open your browser and go to:
+```bash
+http://localhost:8501
+````
+🎉 You can now chat with your AI assistant about your cloud costs!
+###🧩 Example Queries
+
+Try asking:
+
+1.“Show me the total AWS cost for EC2.”
+
+2.“Compare Azure and AWS storage spending.”
+
+3.“What was the highest billing service last month?”
+
+###🧠 How It Works (Simplified)
+
+1.You ask a natural language question.
+
+2.The system uses LangChain + metadata to translate it into an accurate SQL query.
+
+3.The FastAPI backend runs the query on a SQLite database.
+
+4.The Streamlit UI displays the result in a clean, conversational format.
