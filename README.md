@@ -12,12 +12,23 @@ The project is served in two parts:
 
 ## How to Run This Project
 
-### 1. Clone the Repository
-Clone this repository to your local machine.
-
-### 2. Install Requirements
-Create a virtual environment and install all the necessary Python packages.
-
 ```bash
-# Create a requirements.txt file with the contents from the next section
+# 1. Clone the repo
+git clone https://github.com/Cheth-code/Text_sql_Ai-Cloud_Billing.git
+cd Text_sql_Ai-Cloud_Billing
+
+# 2. Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate       # on Linux/macOS
+venv\Scripts\activate          # on Windows
+
+# 3. Install dependencies
 pip install -r requirements.txt
+
+# 4. Run app.py file
+python -m app
+uvicorn app:app --reload
+# running on http://localhost:8501
+
+# 5. Now the frontend by using Streamlit
+streamlit run chat_app.py
