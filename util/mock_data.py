@@ -1,3 +1,4 @@
+# this is capable of generating mock csv data for both azure_cost_usage and aws_cost_usage 
 import pandas as pd
 import random
 from datetime import datetime, timedelta

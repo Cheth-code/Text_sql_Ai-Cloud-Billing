@@ -1,3 +1,4 @@
+# this script is responsible to load_the dataset to sqlite as cloud_costs.db
 import pandas as pd
 import sqlite3
 import os

@@ -1,8 +1,9 @@
+# this file is capable of generating metadata.json 
 import sqlite3
 
 DB_PATH = 'cloud_costs.db'
 conn = sqlite3.connect(DB_PATH)
-cursor = conn.cursor()
+cursor = conn.cursor()  
 
 def profile_column(table_name, column_name):
     print(f"\n--- Profiling {table_name}.{column_name} ---")
