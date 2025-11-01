@@ -77,7 +77,7 @@ This launches the backend API, which processes questions and returns SQL results
 
 Option 1 (simpler alternative):
 ```bash
-python -m app
+python -m app.py
 ````
 Option 2 (If you have uv installed on your machine):
 ```bash
