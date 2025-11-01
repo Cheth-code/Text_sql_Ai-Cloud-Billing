@@ -13,7 +13,7 @@ from pydantic import BaseModel
 # --- 1. Setup ---
 load_dotenv()
 
-DB_PATH = "cloud_costs.db"
+DB_PATH = "util/cloud_costs.db"
 if not os.path.exists(DB_PATH):
     raise FileNotFoundError(f"Database '{DB_PATH}' not found. Please run 'load_data.py' first.")
 

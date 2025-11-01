@@ -1,110 +1,78 @@
 {
-  "tables": [
-    {
-      "table_name": "aws_cost_usage",
-      "description": "Contains AWS cost and usage data for various services, regions, and accounts.",
-      "columns": [
-        {"name": "AVAILABILITYZONE", "description": "Availability zone where the resource is located."},
-        {"name": "BILLEDCOST", "description": "Total billed cost for the resource or service."},
-        {"name": "BILLINGACCOUNTID", "description": "Unique identifier of the AWS billing account."},
-        {"name": "BILLINGACCOUNTNAME", "description": "Name of the AWS billing account."},
-        {"name": "BILLINGCURRENCY", "description": "Currency used for billing."},
-        {"name": "BILLINGPERIODEND", "description": "End date of the billing period."},
-        {"name": "BILLINGPERIODSTART", "description": "Start date of the billing period."},
-        {"name": "CHARGECATEGORY", "description": "Type or category of the charge, such as usage or subscription."},
-        {"name": "CHARGECLASS", "description": "Class of charge or fee applied."},
-        {"name": "CHARGEDESCRIPTION", "description": "Description of the charge item."},
-        {"name": "CHARGEFREQUENCY", "description": "Frequency of the charge, such as hourly or monthly."},
-        {"name": "CHARGEPERIODEND", "description": "End date of the charge period."},
-        {"name": "CHARGEPERIODSTART", "description": "Start date of the charge period."},
-        {"name": "COMMITMENTDISCOUNTCATEGORY", "description": "Category of any applied commitment discount."},
-        {"name": "COMMITMENTDISCOUNTID", "description": "Unique ID of the applied commitment discount."},
-        {"name": "COMMITMENTDISCOUNTNAME", "description": "Name of the commitment discount program."},
-        {"name": "COMMITMENTDISCOUNTSTATUS", "description": "Status of the applied discount (active, expired, etc.)."},
-        {"name": "COMMITMENTDISCOUNTTYPE", "description": "Type of commitment discount, such as Savings Plan or RI."},
-        {"name": "CONSUMEDQUANTITY", "description": "Quantity of resource units consumed."},
-        {"name": "CONSUMEDUNIT", "description": "Unit of measurement for consumption, e.g., GB or hours."},
-        {"name": "CONTRACTEDCOST", "description": "Cost as per the contracted price."},
-        {"name": "CONTRACTEDUNITPRICE", "description": "Unit price defined in the contract."},
-        {"name": "EFFECTIVECOST", "description": "Actual cost after applying discounts."},
-        {"name": "INVOICEISSUERNAME", "description": "Name of the entity issuing the invoice."},
-        {"name": "LISTCOST", "description": "List cost before discounts are applied."},
-        {"name": "LISTUNITPRICE", "description": "Standard unit price before discounts."},
-        {"name": "PRICINGCATEGORY", "description": "Category defining how pricing is applied."},
-        {"name": "PRICINGQUANTITY", "description": "Number of units priced."},
-        {"name": "PRICINGUNIT", "description": "Unit type used for pricing (e.g., hours, GB)."},
-        {"name": "PROVIDERNAME", "description": "Cloud service provider name, e.g., AWS."},
-        {"name": "PUBLISHERNAME", "description": "Publisher providing the resource or service."},
-        {"name": "REGIONID", "description": "Unique region identifier."},
-        {"name": "REGIONNAME", "description": "Name of the AWS region."},
-        {"name": "RESOURCEID", "description": "Unique ID of the resource."},
-        {"name": "RESOURCENAME", "description": "Name of the resource being billed."},
-        {"name": "RESOURCETYPE", "description": "Type of the resource (e.g., EC2, S3, etc.)."},
-        {"name": "SERVICECATEGORY", "description": "Category of AWS service (e.g., Compute, Storage)."},
-        {"name": "SERVICENAME", "description": "Specific AWS service name (e.g., Amazon EC2)."},
-        {"name": "SKUID", "description": "SKU identifier for pricing details."},
-        {"name": "SKUPRICEID", "description": "Unique price ID for the SKU."},
-        {"name": "SUBACCOUNTID", "description": "Sub-account ID within the billing account."},
-        {"name": "SUBACCOUNTNAME", "description": "Name of the sub-account."},
-        {"name": "TAGS", "description": "Tags or metadata associated with the resource."},
-        {"name": "X_COSTCATEGORIES", "description": "Cost category metadata."},
-        {"name": "X_DISCOUNTS", "description": "Discount details applied to the resource."},
-        {"name": "X_OPERATION", "description": "Operation type or API call associated with the charge."},
-        {"name": "X_SERVICECODE", "description": "AWS service code for identification."},
-        {"name": "X_USAGETYPE", "description": "Type of usage measured or billed."}
-      ]
-    },
-    {
-      "table_name": "azure_cost_usage",
-      "description": "Contains Azure cost and usage details across subscriptions, services, and resource groups.",
-      "columns": [
-        {"name": "AccountName", "description": "Azure account name used for billing."},
-        {"name": "AccountOwnerId", "description": "Owner ID of the Azure account."},
-        {"name": "AdditionalInfo", "description": "Additional metadata or notes about the charge."},
-        {"name": "BenefitId", "description": "Unique ID of any applied benefit or offer."},
-        {"name": "BenefitName", "description": "Name of the Azure benefit (e.g., Reserved Instance)."},
-        {"name": "BillingCurrencyCode", "description": "Currency in which the charge is billed."},
-        {"name": "BillingPeriodEndDate", "description": "End date of the billing period."},
-        {"name": "BillingPeriodStartDate", "description": "Start date of the billing period."},
-        {"name": "ChargeType", "description": "Type of charge, e.g., usage, purchase, refund."},
-        {"name": "ConsumedService", "description": "Azure service consumed for the charge (e.g., Compute, Storage)."},
-        {"name": "Cost", "description": "Total cost associated with the resource or usage."},
-        {"name": "CostCenter", "description": "Associated cost center or department code."},
-        {"name": "Date", "description": "Date of the usage or charge record."},
-        {"name": "EffectivePrice", "description": "Effective unit price after discounts."},
-        {"name": "Frequency", "description": "Billing frequency, e.g., hourly, monthly."},
-        {"name": "InvoiceId", "description": "Unique ID of the invoice containing this charge."},
-        {"name": "InvoiceSectionName", "description": "Section of the invoice under which the charge appears."},
-        {"name": "MeterCategory", "description": "Category of the Azure meter, e.g., Virtual Machines, Storage."},
-        {"name": "MeterId", "description": "Unique identifier for the Azure meter."},
-        {"name": "MeterName", "description": "Name of the Azure meter measuring usage."},
-        {"name": "MeterRegion", "description": "Region where the resource usage occurred."},
-        {"name": "MeterSubCategory", "description": "Subcategory of the Azure meter."},
-        {"name": "OfferId", "description": "Offer ID or pricing plan identifier."},
-        {"name": "PartNumber", "description": "Unique part number assigned by Microsoft."},
-        {"name": "PricingModel", "description": "Pricing model type, e.g., pay-as-you-go, reserved."},
-        {"name": "Product", "description": "Product name associated with the charge."},
-        {"name": "ProductOrderId", "description": "Order ID associated with the product purchase."},
-        {"name": "ProductOrderName", "description": "Name of the product order."},
-        {"name": "PublisherName", "description": "Publisher of the Azure product or resource."},
-        {"name": "PublisherType", "description": "Type of publisher, e.g., Microsoft, Third Party."},
-        {"name": "Quantity", "description": "Quantity of units consumed."},
-        {"name": "ReservationId", "description": "ID of any associated reservation benefit."},
-        {"name": "ReservationName", "description": "Name of the reservation applied."},
-        {"name": "ResourceGroup", "description": "Name of the Azure resource group."},
-        {"name": "ResourceLocation", "description": "Location of the resource usage."},
-        {"name": "ResourceName", "description": "Name of the Azure resource."},
-        {"name": "ResourceType", "description": "Type of Azure resource (e.g., Microsoft.Compute/virtualMachines)."},
-        {"name": "ServiceFamily", "description": "Azure service family, e.g., Compute, Storage, Networking."},
-        {"name": "ServiceName", "description": "Specific Azure service name."},
-        {"name": "SubscriptionId", "description": "Azure subscription ID associated with the cost."},
-        {"name": "SubscriptionName", "description": "Name of the Azure subscription."},
-        {"name": "Tags", "description": "Resource tags providing additional metadata."},
-        {"name": "UnitOfMeasure", "description": "Unit used to measure usage, e.g., hours, GB."},
-        {"name": "UnitPrice", "description": "Unit price before discounts."},
-        {"name": "UsageDate", "description": "Date when the usage occurred."},
-        {"name": "UsageQuantity", "description": "Quantity of usage reported for the resource."}
-      ]
-    }
-  ]
+  "aws_cost_usage": {
+    "description": "Contains cost and usage data for Amazon Web Services (AWS). Use this table for all questions related to AWS spend.",
+    "expert_guidance": [
+      "**Primary Cost Column:** ALWAYS use `EFFECTIVECOST` for any questions about cost, spend, or totals. It reflects all discounts and credits. DO NOT use `BILLEDCOST`.",
+      "**Primary Date Column:** ALWAYS use `BILLINGPERIODSTART` for date-based filtering (e.g., 'last month', 'daily'). It is stored as TEXT in 'YYYY-MM-DD' format.",
+      "**Date Filtering:** To filter by date, use SQLite date functions. For 'last month', use: `WHERE BILLINGPERIODSTART >= date('now', '-1 month', 'start of month') AND BILLINGPERIODSTART < date('now', 'start of month')`.",
+      "**Service Grouping:** Use `SERVICENAME` to group by service (e.g., 'Amazon Elastic Compute Cloud').",
+      "**Tags (Complex):** The `TAGS` column is a complex JSON string: `{\"key_value\": [{\"key\": \"K\", \"value\": \"V\"}]}`. This structure is difficult to query in a single line. **Avoid filtering by tags if possible.** If you must, select the `RESOURCENAME` and `TAGS` columns and let the user see the values."
+    ],
+    "columns": [
+      {
+        "name": "EFFECTIVECOST",
+        "description": "The final, actual cost after all discounts (Savings Plans, RIs, etc.) are applied. **ALWAYS use this for cost calculations.**"
+      },
+      {
+        "name": "SERVICENAME",
+        "description": "The name of the AWS service, e.g., 'Amazon Elastic Compute Cloud', 'Amazon Simple Storage Service'. Use for grouping by service."
+      },
+      {
+        "name": "BILLINGPERIODSTART",
+        "description": "The start date (YYYY-MM-DD) of the usage record. **Use this for all date-based filtering and grouping.**"
+      },
+      {
+        "name": "RESOURCENAME",
+        "description": "The user-defined name of the resource (e.g., an EC2 instance name or S3 bucket name). This can be null."
+      },
+      {
+        "name": "RESOURCEID",
+        "description": "The unique Amazon Resource Name (ARN) or ID of the resource. More reliable for identifying a unique resource."
+      },
+      {
+        "name": "REGIONNAME",
+        "description": "The human-readable name of the AWS region, e.g., 'Asia Pacific (Sydney)', 'US East (N. Virginia)'."
+      },
+      {
+        "name": "TAGS",
+        "description": "A complex JSON string of resource tags. See 'expert_guidance' for query limitations."
+      }
+    ]
+  },
+  "azure_cost_usage": {
+    "description": "Contains cost and usage data for Microsoft Azure. Use this table for all questions related to Azure spend.",
+    "expert_guidance": [
+      "**Primary Cost Column:** ALWAYS use `EFFECTIVECOST` for any questions about cost, spend, or totals. It reflects all discounts.",
+      "**Primary Date Column:** ALWAYS use `BILLINGPERIODSTART` for date-based filtering. It is stored as TEXT in 'YYYY-MM-DD HH:MM:SS.SSS' format.",
+      "**Date Filtering:** To filter by date, you MUST use the `date()` function. For 'last month', use: `WHERE date(BILLINGPERIODSTART) >= date('now', '-1 month', 'start of month') AND date(BILLINGPERIODSTART) < date('now', 'start of month')`.",
+      "**Service Grouping:** Use `SERVICENAME` to group by service (e.g., 'Virtual Machines', 'Azure Monitor').",
+      "**Tags (Simple):** The `TAGS` column is a simple JSON object: `{\"key\": \"value\"}`. You **CAN** query this directly with `json_extract`. Example: `WHERE json_extract(TAGS, '$.cost_center') = '12345'`."
+    ],
+    "columns": [
+      {
+        "name": "EFFECTIVECOST",
+        "description": "The final, actual cost after all discounts are applied. **ALWAYS use this for cost calculations.**"
+      },
+      {
+        "name": "SERVICENAME",
+        "description": "The specific Azure service, e.g., 'Virtual Machines', 'Storage Accounts', 'Azure Monitor'. Use for grouping by service."
+      },
+      {
+        "name": "BILLINGPERIODSTART",
+        "description": "The start timestamp (YYYY-MM-DD HH:MM:SS.SSS) of the usage record. **Use `date(BILLINGPERIODSTART)` for all date-based filtering.**"
+      },
+      {
+        "name": "RESOURCENAME",
+        "description": "The name of the Azure resource that incurred the charge."
+      },
+      {
+        "name": "REGIONNAME",
+        "description": "The name of the Azure region, e.g., 'Australia East', 'Australia Southeast'."
+      },
+      {
+        "name": "TAGS",
+        "description": "A simple JSON object of resource tags: `{\"key\": \"value\"}`. This can be queried with `json_extract` (see expert_guidance)."
+      }
+    ]
+  }
 }
