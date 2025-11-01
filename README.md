@@ -87,7 +87,7 @@ Once it’s running, you should see something like:
 ```bash
 Application running on http://127.0.0.1:8000
 ````
-### 💬 5. Run the Frontend (Streamlit)
+### 💬 6. Run the Frontend (Streamlit)
 This starts the chat-style user interface that talks to the FastAPI backend.
 ```bash
 streamlit run chat_app.py
@@ -116,3 +116,30 @@ Try asking:
 3.The FastAPI backend runs the query on a SQLite database.
 
 4.The Streamlit UI displays the result in a clean, conversational format.
+
+### ❌ If you find these errors
+```bash
+INFO:     Started reloader process [58964] using StatReload
+ERROR:    Error loading ASGI app. Attribute “app” not found in module “app”.
+````
+if uv is installed run this 
+```bash
+python -m app
+````
+if not  
+```bash
+python -m app.py
+````
+if an error on database 
+```bash
+    raise FileNotFoundError(f”Database ‘{DB_PATH}’ not found. Please run ‘load_data.py’ first.“)
+FileNotFoundError: Database ‘cloud_costs.db’ not found. Please run ‘load_data.py’ first
+````
+cd to utils
+```bash
+cd utils
+````
+```bash
+python -m load_data.py 
+````
+cloud_costs.db is created 
