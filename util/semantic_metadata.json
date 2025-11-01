@@ -1,0 +1,94 @@
+{
+  "aws_cost_usage": {
+    "ServiceName": {
+      "sample_values": [
+        "Amazon Elastic Compute Cloud",
+        "Amazon Simple Storage Service",
+        "AWS Glue",
+        "Amazon Elastic Compute Cloud",
+        "Amazon Relational Database Service"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 35
+    },
+    "RegionName": {
+      "sample_values": [
+        "Asia Pacific (Sydney)",
+        "Asia Pacific (Sydney)",
+        "Asia Pacific (Sydney)",
+        "Asia Pacific (Sydney)",
+        "External"
+      ],
+      "null_percentage": "0.60%",
+      "distinct_values": 25
+    },
+    "EffectiveCost": {
+      "sample_values": [
+        0.019656,
+        0.012580645,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 435
+    },
+    "BillingPeriodStart": {
+      "sample_values": [
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1
+    }
+  },
+  "azure_cost_usage": {
+    "ServiceName": {
+      "sample_values": [
+        "Virtual Machines",
+        "Storage Accounts",
+        "Event Grid",
+        "Storage Accounts",
+        "Storage Accounts"
+      ],
+      "null_percentage": "0.02%",
+      "distinct_values": 47
+    },
+    "RegionName": {
+      "sample_values": [
+        "Australia East",
+        "Australia East",
+        "Australia East",
+        "Australia East",
+        "Australia East"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 12
+    },
+    "EffectiveCost": {
+      "sample_values": [
+        1.496043e-05,
+        0.00319549811055,
+        0.001426698,
+        2.57542348e-07,
+        0.037392670788
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3141
+    },
+    "BillingPeriodStart": {
+      "sample_values": [
+        "2025-09-01 00:00:00.000",
+        "2025-09-01 00:00:00.000",
+        "2025-09-01 00:00:00.000",
+        "2025-08-01 00:00:00.000",
+        "2025-07-01 00:00:00.000"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3
+    }
+  }
+}

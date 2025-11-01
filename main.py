@@ -23,7 +23,7 @@ db = SQLDatabase.from_uri(sqlite_uri,
                           sample_rows_in_table_info=2)
 
 try:
-    with open('semantic_metadata.json', 'r') as f:
+    with open('util/semantic_metadata.json', 'r') as f:
         semantic_metadata = json.load(f)
 except FileNotFoundError:
     raise FileNotFoundError("Error: 'semantic_metadata.json' not found. Please complete Step 2 first.")
