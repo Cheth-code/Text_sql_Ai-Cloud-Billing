@@ -67,22 +67,17 @@ This installs all the required Python libraries listed in requirements.txt.
 ```bash
 pip install -r requirements.txt
 ````
-### ⚙️ 4. go to the utils folder
+### 📦 4. Create a .env file
+This would hold your opena_api_key, paste it 
 ```bash
-cd utils
+OPENAI_API_KEY = "YOUR_OPENAI_API_KEY" 
 ````
-### ⚙️ 5. run load_data.py
-```bash
-python -m load_data.py
-````
-cloud_db get's generated
-
-### ⚙️ 6. Run the Backend (FastAPI)
+### ⚙️ 5. Run the Backend (FastAPI)
 This launches the backend API, which processes questions and returns SQL results.
 
 Option 1 (simpler alternative):
 ```bash
-python -m app
+python -m app.py
 ````
 Option 2 (If you have uv installed on your machine):
 ```bash
@@ -92,7 +87,7 @@ Once it’s running, you should see something like:
 ```bash
 Application running on http://127.0.0.1:8000
 ````
-### 💬 5. Run the Frontend (Streamlit)
+### 💬 6. Run the Frontend (Streamlit)
 This starts the chat-style user interface that talks to the FastAPI backend.
 ```bash
 streamlit run chat_app.py
@@ -121,3 +116,30 @@ Try asking:
 3.The FastAPI backend runs the query on a SQLite database.
 
 4.The Streamlit UI displays the result in a clean, conversational format.
+
+### ❌ If you find these errors
+```bash
+INFO:     Started reloader process [58964] using StatReload
+ERROR:    Error loading ASGI app. Attribute “app” not found in module “app”.
+````
+if uv is installed run this 
+```bash
+python -m app
+````
+if not  
+```bash
+python -m app.py
+````
+if an error on database 
+```bash
+    raise FileNotFoundError(f”Database ‘{DB_PATH}’ not found. Please run ‘load_data.py’ first.“)
+FileNotFoundError: Database ‘cloud_costs.db’ not found. Please run ‘load_data.py’ first
+````
+cd to utils
+```bash
+cd utils
+````
+```bash
+python -m load_data.py 
+````
+cloud_costs.db is created 
