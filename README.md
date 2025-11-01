@@ -67,17 +67,12 @@ This installs all the required Python libraries listed in requirements.txt.
 ```bash
 pip install -r requirements.txt
 ````
-### ⚙️ 4. go to the utils folder
+### 📦 4. Create a .env file
+This would hold your opena_api_key, paste it 
 ```bash
-cd utils
+OPENAI_API_KEY = "YOUR_OPENAI_API_KEY" 
 ````
-### ⚙️ 5. run load_data.py
-```bash
-python -m load_data.py
-````
-cloud_db get's generated
-
-### ⚙️ 6. Run the Backend (FastAPI)
+### ⚙️ 5. Run the Backend (FastAPI)
 This launches the backend API, which processes questions and returns SQL results.
 
 Option 1 (simpler alternative):
