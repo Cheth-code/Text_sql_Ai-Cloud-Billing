@@ -66,21 +66,46 @@ This installs all the required Python libraries listed in requirements.txt.
 pip install -r requirements.txt
 ````
 ### 📦 4. Create a .env file
-This would hold your opena_api_key, paste it 
+This would hold your openai_api_key, paste it 
 ```bash
 OPENAI_API_KEY = "YOUR_OPENAI_API_KEY" 
 ````
-### ⚙️ 5. Run the Backend (FastAPI)
+### ⚙️ 5. Run the load_data.py
+Make sure the datasets are in util file
+This loads the given_datasets.csv to sqlite database
+got to util
+```bash
+cd util
+````
+run load_data.py
+```bash
+python -m load_data.py
+````
+cloud_costs.db get's created in the util folder
+
+### ⚙️ 6. Run the metadata_by_ai.py
+This creates a sematic_metadata.json by analysing all the cloumns of the cloud_costs.db
+with an AI description
+
+in the util folder
+run metadata_by_ai.py
+```bash
+python -m metadata_by_ai.py
+````
+sematic_metadata.json is created
+
+go back to root dir 
+```bash
+cd ..
+````
+### ⚙️ 7. Run the Backend (FastAPI)
 This launches the backend API, which processes questions and returns SQL results.
 
-Option 1 (simpler alternative):
+run the app.py
 ```bash
 python -m app.py
 ````
-Option 2 (If you have uv installed on your machine):
-```bash
-uvicorn app:app --reload
-````
+
 Once it’s running, you should see something like:
 ```bash
 Application running on http://127.0.0.1:8000
