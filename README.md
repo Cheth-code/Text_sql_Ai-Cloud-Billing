@@ -23,9 +23,7 @@ It uses:
 ---
 
 ## 🏗️ Project Architecture
-
-<img width="1529" height="826" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/5f010539-4ce1-42a0-a62f-b7f34592845a" />
-
+<img width="1784" height="1010" alt="text-to_sql" src="https://github.com/user-attachments/assets/3bc0400f-4624-4681-8394-8da56583fbd4" />
 ---
 
 ## 🧰 Tech Stack
