@@ -1,39 +1,71 @@
 {
   "aws_cost_usage": {
-    "ServiceName": {
+    "AVAILABILITYZONE": {
       "sample_values": [
-        "Amazon Elastic Compute Cloud",
-        "Amazon Simple Storage Service",
-        "AWS Glue",
-        "Amazon Elastic Compute Cloud",
-        "Amazon Relational Database Service"
+        "ap-southeast-2a",
+        "ap-southeast-2",
+        "ap-southeast-2",
+        "ap-southeast-2c",
+        "ap-southeast-2b"
+      ],
+      "null_percentage": "97.10%",
+      "distinct_values": 4,
+      "ai_description": "The availability zones in which services are hosted.",
+      "semantic_type": "Categorical"
+    },
+    "BILLEDCOST": {
+      "sample_values": [
+        0.0006552,
+        0.0013572,
+        7.02e-06,
+        3.432e-07,
+        0.010165161
       ],
       "null_percentage": "0.00%",
-      "distinct_values": 35
+      "distinct_values": 412,
+      "ai_description": "The billed cost of services in USD.",
+      "semantic_type": "Numerical"
     },
-    "RegionName": {
+    "BILLINGACCOUNTID": {
       "sample_values": [
-        "Asia Pacific (Sydney)",
-        "Asia Pacific (Sydney)",
-        "Asia Pacific (Sydney)",
-        "Asia Pacific (Sydney)",
-        "External"
-      ],
-      "null_percentage": "0.60%",
-      "distinct_values": 25
-    },
-    "EffectiveCost": {
-      "sample_values": [
-        0.019656,
-        0.012580645,
-        0.0,
-        0.0,
-        0.0
+        428183000000.0,
+        428183000000.0,
+        428183000000.0,
+        428183000000.0,
+        428183000000.0
       ],
       "null_percentage": "0.00%",
-      "distinct_values": 435
+      "distinct_values": 1,
+      "ai_description": "The unique identifier for the billing account associated with the AWS cost usage.",
+      "semantic_type": "Identifier"
     },
-    "BillingPeriodStart": {
+    "BILLINGACCOUNTNAME": {
+      "sample_values": [
+        "gsafj-nalpybhq-zcn57-cebq",
+        "gsafj-nalpybhq-zcn57-cebq",
+        "gsafj-nalpybhq-zcn57-cebq",
+        "gsafj-nalpybhq-zcn57-cebq",
+        "gsafj-nalpybhq-zcn57-cebq"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The name of the billing account associated with the AWS usage costs.",
+      "semantic_type": "Identifier"
+    },
+    "BILLINGCURRENCY": {
+      "sample_values": [
+        "USD",
+        "USD",
+        "USD",
+        "USD",
+        "USD"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The billing currency for the service costs, represented in USD.",
+      "semantic_type": "Categorical"
+    },
+    "BILLINGPERIODEND": {
       "sample_values": [
         "00:00.0",
         "00:00.0",
@@ -42,22 +74,945 @@
         "00:00.0"
       ],
       "null_percentage": "0.00%",
-      "distinct_values": 1
+      "distinct_values": 1,
+      "ai_description": "The time at which the billing period ends.",
+      "semantic_type": "Time"
+    },
+    "BILLINGPERIODSTART": {
+      "sample_values": [
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The starting time of the billing period.",
+      "semantic_type": "Time"
+    },
+    "CHARGECATEGORY": {
+      "sample_values": [
+        "Usage",
+        "Usage",
+        "Usage",
+        "Usage",
+        "Usage"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 2,
+      "ai_description": "The category of charges associated with AWS usage.",
+      "semantic_type": "Categorical"
+    },
+    "CHARGECLASS": {
+      "sample_values": [],
+      "null_percentage": "100.00%",
+      "distinct_values": 0,
+      "ai_description": "This column represents the charge class associated with AWS cost usage.",
+      "semantic_type": "Categorical"
+    },
+    "CHARGEDESCRIPTION": {
+      "sample_values": [
+        "$0.0044 per 10,000 GET and all other requests",
+        "Price per Rule (Shield Protected)",
+        "$0.033 per GB-mo of log storage - Asia Pacific (Sydney)",
+        "USD 0.023 per GB-month of backup storage exceeding free allocation for Aurora MySQL",
+        "$0.096 per GB-month of General Purpose (gp3) provisioned storage - Asia Pacific (Sydney)"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 169,
+      "ai_description": "Detailed description of charges associated with AWS services.",
+      "semantic_type": "Text"
+    },
+    "CHARGEFREQUENCY": {
+      "sample_values": [
+        "Usage-Based",
+        "Usage-Based",
+        "Usage-Based",
+        "Usage-Based",
+        "Usage-Based"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The frequency at which charges are applied for the service usage.",
+      "semantic_type": "Categorical"
+    },
+    "CHARGEPERIODEND": {
+      "sample_values": [
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The end time of the charge period, represented in a time format.",
+      "semantic_type": "Time"
+    },
+    "CHARGEPERIODSTART": {
+      "sample_values": [
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0",
+        "00:00.0"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The start time of the charge period in HH:MM format.",
+      "semantic_type": "Time"
+    },
+    "COMMITMENTDISCOUNTCATEGORY": {
+      "sample_values": [
+        "Spend",
+        "Spend",
+        "Spend",
+        "Spend",
+        "Spend"
+      ],
+      "null_percentage": "97.60%",
+      "distinct_values": 1,
+      "ai_description": "The category of commitment discount applied to the spending.",
+      "semantic_type": "Categorical"
+    },
+    "COMMITMENTDISCOUNTID": {
+      "sample_values": [
+        "arn:aws:savingsplans::973638948628:savingsplan/42025099-91q3-9ss1-415s-o4394s87or17",
+        "arn:aws:savingsplans::973638948628:savingsplan/42025099-91q3-9ss1-415s-o4394s87or17",
+        "arn:aws:savingsplans::973638948628:savingsplan/nq7sn00n-4qnr-9087-3o66-7p2osn9483o0",
+        "arn:aws:savingsplans::973638948628:savingsplan/42025099-91q3-9ss1-415s-o4394s87or17",
+        "arn:aws:savingsplans::973638948628:savingsplan/42025099-91q3-9ss1-415s-o4394s87or17"
+      ],
+      "null_percentage": "97.60%",
+      "distinct_values": 2,
+      "ai_description": "The unique identifier for the commitment discount associated with AWS savings plans.",
+      "semantic_type": "Identifier"
+    },
+    "COMMITMENTDISCOUNTNAME": {
+      "sample_values": [],
+      "null_percentage": "100.00%",
+      "distinct_values": 0,
+      "ai_description": "The name of the commitment discount associated with AWS services.",
+      "semantic_type": "Text"
+    },
+    "COMMITMENTDISCOUNTSTATUS": {
+      "sample_values": [
+        "Used",
+        "Used",
+        "Used",
+        "Used",
+        "Used"
+      ],
+      "null_percentage": "97.60%",
+      "distinct_values": 1,
+      "ai_description": "The status of the commitment discount, indicating whether it has been used or not.",
+      "semantic_type": "Categorical"
+    },
+    "COMMITMENTDISCOUNTTYPE": {
+      "sample_values": [
+        "Savings Plan",
+        "Savings Plan",
+        "Savings Plan",
+        "Savings Plan",
+        "Savings Plan"
+      ],
+      "null_percentage": "97.60%",
+      "distinct_values": 1,
+      "ai_description": "The type of commitment discount applied to AWS services, predominantly indicating 'Savings Plan'.",
+      "semantic_type": "Categorical"
+    },
+    "CONSUMEDQUANTITY": {
+      "sample_values": [
+        347.0,
+        1.0,
+        0.02016129,
+        1.0,
+        1.0
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 463,
+      "ai_description": "The quantity of resources consumed in a given time period.",
+      "semantic_type": "Numerical"
+    },
+    "CONSUMEDUNIT": {
+      "sample_values": [
+        "GiB/Second-Months",
+        "GiB/Second-Months",
+        "GiB/Second-Months",
+        "GB",
+        "GiB/Second-Months"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 32,
+      "ai_description": "The amount of resources consumed measured in various units of data transfer or storage over time.",
+      "semantic_type": "Numerical"
+    },
+    "CONTRACTEDCOST": {
+      "sample_values": [
+        7.4e-09,
+        6.864e-07,
+        0.003220645,
+        2.70287e-05,
+        0.0039
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 433,
+      "ai_description": "The contracted cost associated with the service usage in USD.",
+      "semantic_type": "Numerical"
+    },
+    "CONTRACTEDUNITPRICE": {
+      "sample_values": [
+        0.073244147,
+        0.07488,
+        0.007800042,
+        0.177839999,
+        0.02480916
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 263,
+      "ai_description": "The contracted unit price for the services in USD.",
+      "semantic_type": "Numerical"
+    },
+    "EFFECTIVECOST": {
+      "sample_values": [
+        3.432e-07,
+        0.0006552,
+        0.0,
+        7.02e-06,
+        0.0
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 435,
+      "ai_description": "The effective cost of using AWS services represented in USD.",
+      "semantic_type": "Numerical"
+    },
+    "INVOICEISSUERNAME": {
+      "sample_values": [
+        "Amazon Web Services Australia Pty Ltd",
+        "Amazon Web Services Australia Pty Ltd",
+        "Amazon Web Services Australia Pty Ltd",
+        "Amazon Web Services Australia Pty Ltd",
+        "Amazon Web Services Australia Pty Ltd"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The name of the issuer of the invoice for the AWS services.",
+      "semantic_type": "Text"
+    },
+    "LISTCOST": {
+      "sample_values": [
+        4.07164e-05,
+        4.4e-07,
+        0.022097115,
+        0.038709677,
+        0.016516129
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 427,
+      "ai_description": "The cost associated with a specific AWS service usage, measured in a monetary unit, likely representing fractions of currency.",
+      "semantic_type": "Numerical"
+    },
+    "LISTUNITPRICE": {
+      "sample_values": [
+        0.096,
+        0.023,
+        0.0,
+        0.023,
+        5e-06
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 85,
+      "ai_description": "The price per unit of the AWS resource in USD.",
+      "semantic_type": "Numerical"
+    },
+    "PRICINGCATEGORY": {
+      "sample_values": [
+        "Standard",
+        "Standard",
+        "Standard",
+        "Standard",
+        "Standard"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 2,
+      "ai_description": "The pricing category associated with AWS cost usage.",
+      "semantic_type": "Categorical"
+    },
+    "PRICINGQUANTITY": {
+      "sample_values": [
+        0.110683738,
+        1.0,
+        0.268817204,
+        0.001293954,
+        0.086021505
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 463,
+      "ai_description": "The quantity of the pricing unit used for AWS services.",
+      "semantic_type": "Numerical"
+    },
+    "PRICINGUNIT": {
+      "sample_values": [
+        "GB",
+        "Requests",
+        "Requests",
+        "GB",
+        "GB-Months"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 32,
+      "ai_description": "The unit of pricing for AWS services, representing how costs are calculated (e.g., per GB, per request).",
+      "semantic_type": "Categorical"
+    },
+    "PROVIDERNAME": {
+      "sample_values": [
+        "AWS",
+        "AWS",
+        "AWS",
+        "AWS",
+        "AWS"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The name of the cloud service provider.",
+      "semantic_type": "Categorical"
+    },
+    "PUBLISHERNAME": {
+      "sample_values": [
+        "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+        "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+        "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+        "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+        "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The name of the publisher associated with the cost usage record.",
+      "semantic_type": "Text"
+    },
+    "REGIONID": {
+      "sample_values": [
+        "ap-southeast-2",
+        "ap-southeast-2",
+        "ap-southeast-2",
+        "ap-southeast-2",
+        "ap-southeast-2"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 18,
+      "ai_description": "The geographical location identifier of the AWS region where the cost is incurred.",
+      "semantic_type": "Categorical"
+    },
+    "REGIONNAME": {
+      "sample_values": [
+        "United States",
+        "Asia Pacific (Sydney)",
+        "Asia Pacific (Sydney)",
+        "Asia Pacific (Sydney)",
+        "Asia Pacific (Sydney)"
+      ],
+      "null_percentage": "0.60%",
+      "distinct_values": 25,
+      "ai_description": "The name of the region where the AWS service is used.",
+      "semantic_type": "Categorical"
+    },
+    "RESOURCEID": {
+      "sample_values": [
+        "arn:aws:backup:ap-southeast-2:790639323661",
+        "arn:aws:logs:ap-southeast-2:996429845353",
+        "arn:aws:fsx:ap-southeast-2:483708003745",
+        "arn:aws:sns:ap-southeast-2:080088901796",
+        "886429382895-ffz-pbzznaq-bhgchg"
+      ],
+      "null_percentage": "6.30%",
+      "distinct_values": 716,
+      "ai_description": "The unique identifier for AWS resources, including ARN and other resource identifiers.",
+      "semantic_type": "Identifier"
+    },
+    "RESOURCENAME": {
+      "sample_values": [],
+      "null_percentage": "100.00%",
+      "distinct_values": 0,
+      "ai_description": "The name of the resource associated with the cost usage.",
+      "semantic_type": "Text"
+    },
+    "RESOURCETYPE": {
+      "sample_values": [
+        "volume",
+        "bucket",
+        "bucket",
+        "bucket",
+        "volume"
+      ],
+      "null_percentage": "68.80%",
+      "distinct_values": 4,
+      "ai_description": "The type of AWS resource associated with the cost usage record.",
+      "semantic_type": "Categorical"
+    },
+    "SERVICECATEGORY": {
+      "sample_values": [
+        "Storage",
+        "Storage",
+        "Storage",
+        "Identity",
+        "Storage"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 10,
+      "ai_description": "The category of AWS services used, such as Storage or Identity.",
+      "semantic_type": "Categorical"
+    },
+    "SERVICENAME": {
+      "sample_values": [
+        "Amazon Relational Database Service",
+        "AWS Secrets Manager",
+        "Amazon Simple Storage Service",
+        "AWS Key Management Service",
+        "Amazon Elastic Compute Cloud"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 35,
+      "ai_description": "The name of the AWS service associated with the cost usage.",
+      "semantic_type": "Categorical"
+    },
+    "SKUID": {
+      "sample_values": [
+        "MFEBZPX8NHM5FY7Z",
+        "S2HSTTS2H33SVCJT",
+        "MFEBZPX8NHM5FY7Z",
+        "ZWQ6Q48CRJXX4FXE",
+        "NUKV5QPTHVFBW7DE"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 186,
+      "ai_description": "A unique identifier for AWS service usage, representing specific SKUs.",
+      "semantic_type": "Identifier"
+    },
+    "SKUPRICEID": {
+      "sample_values": [
+        "QR74UAP3E9WUYT9B.JRTCKXETXF.6YS6EN2CT7",
+        "C3HHMR3U9CR9AK63.JRTCKXETXF.6YS6EN2CT7",
+        "QR74UAP3E9WUYT9B.JRTCKXETXF.6YS6EN2CT7",
+        "69EGQ83GFYZBFNWU.JRTCKXETXF.6YS6EN2CT7",
+        "QR74UAP3E9WUYT9B.JRTCKXETXF.6YS6EN2CT7"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 190,
+      "ai_description": "Identifier representing the pricing SKU for AWS services.",
+      "semantic_type": "Identifier"
+    },
+    "SUBACCOUNTID": {
+      "sample_values": [
+        242013000000.0,
+        779958000000.0,
+        235046000000.0,
+        779958000000.0,
+        110781000000.0
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 171,
+      "ai_description": "The unique identifier for each subaccount associated with AWS costs.",
+      "semantic_type": "Identifier"
+    },
+    "SUBACCOUNTNAME": {
+      "sample_values": [
+        "gsafj-gfq-qngntj-cebq",
+        "gsafj-pcf-pbaprffvbaf-abacebq",
+        "gsafj-pbecbengrvg-rdhvcqri-abacebq",
+        "ezf-onuf-njf-cebq",
+        "gsafj-uf-izp-cebq"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 173,
+      "ai_description": "The name of the subaccount associated with the AWS cost usage.",
+      "semantic_type": "Identifier"
+    },
+    "TAGS": {
+      "sample_values": [
+        "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:project\",\n      \"value\": \"P.0058260.05.004\"\n    },\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-corpit-equipprojdev-nonprod\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"1000182124\"\n    }\n  ]\n}",
+        "{\n  \"key_value\": [\n    {\n      \"key\": \"Name\",\n      \"value\": \"instance-scheduler-encryption-key\"\n    },\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"st-financeit-app-nonprod\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000129075\"\n    }\n  ]\n}",
+        "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-cst-integrator-prod\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000141034\"\n    }\n  ]\n}",
+        "{\n  \"key_value\": [\n    {\n      \"key\": \"Environment_Classification\",\n      \"value\": \"Non Production\"\n    },\n    {\n      \"key\": \"Environment_Name\",\n      \"value\": \"n3int\"\n    },\n    {\n      \"key\": \"Application_Owner_Email\",\n      \"value\": \"Murugs.Ramassamy@transport.nsw.gov.au\"\n    },\n    {\n      \"key\": \"Name\",\n      \"value\": \"AWANPLDRCN3AP01\"\n    },\n    {\n      \"key\": \"Application_Name\",\n      \"value\": \"DRIVES Registry Controller\"\n    },\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"DRIVES Registry Controller\"\n    },\n    {\n      \"key\": \"Encryption\",\n      \"value\": \"TRUE\"\n    },\n    {\n      \"key\": \"aws-migration-project-id\",\n      \"value\": \"MPE33002\"\n    },\n    {\n      \"key\": \"Primary_Data_Label\",\n      \"value\": \"Sensitive: Law Enforcement\"\n    },\n    {\n      \"key\": \"Data_Labelling\",\n      \"value\": \"Sensitive: Law Enforcement+Sensitive: Health Information+Sensitive: Personal+Sensitive: NSW Government+Sensitive\"\n    },\n    {\n      \"key\": \"Workload_Profile\",\n      \"value\": \"Predictable Bursting\"\n    },\n    {\n      \"key\": \"map-migrated-app\",\n      \"value\": \"d-application-01n4q9m8c3b8yk\"\n    },\n    {\n      \"key\": \"Application_Owner\",\n      \"value\": \"Murugs Ramassamy\"\n    },\n    {\n      \"key\": \"map-migrated\",\n      \"value\": \"d-server-00wq1fo4ahkurd\"\n    },\n    {\n      \"key\": \"Purpose\",\n      \"value\": \"App Server\"\n    },\n    {\n      \"key\": \"Application_ID\",\n      \"value\": \"PAC003169\"\n    },\n    {\n      \"key\": \"Cost_Object\",\n      \"value\": \"0000182133\"\n    },\n    {\n      \"key\": \"Operational_Hours_Cron\",\n      \"value\": \"* * * * *\"\n    },\n    {\n      \"key\": \"Data_Classification\",\n      \"value\": \"Official\"\n    },\n    {\n      \"key\": \"Data_Retention\",\n      \"value\": \"Indefinite\"\n    },\n    {\n      \"key\": \"Application_Category\",\n      \"value\": \"APP\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000182133\"\n    },\n    {\n      \"key\": \"Organization\",\n      \"value\": \"TfNSW RDS\"\n    },\n    {\n      \"key\": \"Environment_Type\",\n      \"value\": \"Integration\"\n    },\n    {\n      \"key\": \"Operational_Hours\",\n      \"value\": \"24 hours x 7 days\"\n    }\n  ]\n}",
+        "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"AnyCloud\"\n    }\n  ]\n}"
+      ],
+      "null_percentage": "16.70%",
+      "distinct_values": 539,
+      "ai_description": "A JSON object containing key-value pairs representing various tags associated with AWS resources for cost allocation and management.",
+      "semantic_type": "Text"
+    },
+    "X_COSTCATEGORIES": {
+      "sample_values": [],
+      "null_percentage": "100.00%",
+      "distinct_values": 0,
+      "ai_description": "Cost categories for AWS services.",
+      "semantic_type": "Categorical"
+    },
+    "X_DISCOUNTS": {
+      "sample_values": [
+        "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\"}]}",
+        "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-9.529000000000000e-07},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-9.529000000000000e-07}]}",
+        "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\"}]}",
+        "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\"}]}",
+        "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\"}]}"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 392,
+      "ai_description": "A JSON object representing various types of discounts applied, including total and bundled discounts.",
+      "semantic_type": "Text"
+    },
+    "X_OPERATION": {
+      "sample_values": [
+        "Storage",
+        "ListKeyPolicies",
+        "GetObject",
+        "CreateDBInstance:0016",
+        "GetKeyPolicy"
+      ],
+      "null_percentage": "2.00%",
+      "distinct_values": 133,
+      "ai_description": "The type of operation performed in relation to AWS services.",
+      "semantic_type": "Categorical"
+    },
+    "X_SERVICECODE": {
+      "sample_values": [
+        "AmazonStates",
+        "AWSBackup",
+        "awskms",
+        "awskms",
+        "AmazonRDS"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 35,
+      "ai_description": "The service code representing different AWS services associated with cost usage.",
+      "semantic_type": "Categorical"
+    },
+    "X_USAGETYPE": {
+      "sample_values": [
+        "ap-southeast-2-KMS-Requests",
+        "APS2-Aurora:BackupUsage",
+        "APS2-EBS:SnapshotUsage",
+        "APN2-APS2-AWS-In-Bytes",
+        "APS2-EBS:SnapshotUsage"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 176,
+      "ai_description": "The type of AWS service usage being recorded.",
+      "semantic_type": "Categorical"
     }
   },
   "azure_cost_usage": {
-    "ServiceName": {
+    "BILLEDCOST": {
       "sample_values": [
-        "Virtual Machines",
-        "Storage Accounts",
-        "Event Grid",
-        "Storage Accounts",
-        "Storage Accounts"
+        0.0,
+        1.1129590296,
+        0.0,
+        0.0,
+        0.020748387096774
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 2902,
+      "ai_description": "The billed cost for Azure services in the respective currency.",
+      "semantic_type": "Numerical"
+    },
+    "BILLINGACCOUNTID": {
+      "sample_values": [
+        "/providers/Microsoft.Billing/billingAccounts/92487455",
+        "/providers/Microsoft.Billing/billingAccounts/92487455",
+        "/providers/Microsoft.Billing/billingAccounts/92487455",
+        "/providers/Microsoft.Billing/billingAccounts/92487455",
+        "/providers/Microsoft.Billing/billingAccounts/92487455"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The unique identifier for the billing account associated with Azure services.",
+      "semantic_type": "Identifier"
+    },
+    "BILLINGACCOUNTNAME": {
+      "sample_values": [
+        "Genafcbeg sbe AFJ",
+        "Genafcbeg sbe AFJ",
+        "Genafcbeg sbe AFJ",
+        "Genafcbeg sbe AFJ",
+        "Genafcbeg sbe AFJ"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The name of the billing account associated with the records.",
+      "semantic_type": "Text"
+    },
+    "BILLINGACCOUNTTYPE": {
+      "sample_values": [
+        "Billing Account",
+        "Billing Account",
+        "Billing Account",
+        "Billing Account",
+        "Billing Account"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The type of billing account used for the costs recorded in the usage data.",
+      "semantic_type": "Categorical"
+    },
+    "BILLINGCURRENCY": {
+      "sample_values": [
+        "AUD",
+        "AUD",
+        "AUD",
+        "AUD",
+        "AUD"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The currency in which the billing amount is represented.",
+      "semantic_type": "Categorical"
+    },
+    "BILLINGPERIODEND": {
+      "sample_values": [
+        "2025-08-01 00:00:00.000",
+        "2025-08-01 00:00:00.000",
+        "2025-08-01 00:00:00.000",
+        "2025-08-01 00:00:00.000",
+        "2025-08-01 00:00:00.000"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3,
+      "ai_description": "The end date of the billing period in a datetime format.",
+      "semantic_type": "Date"
+    },
+    "BILLINGPERIODSTART": {
+      "sample_values": [
+        "2025-09-01 00:00:00.000",
+        "2025-08-01 00:00:00.000",
+        "2025-09-01 00:00:00.000",
+        "2025-09-01 00:00:00.000",
+        "2025-07-01 00:00:00.000"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3,
+      "ai_description": "The start date and time of the billing period in the format YYYY-MM-DD HH:MM:SS.",
+      "semantic_type": "Date"
+    },
+    "CHARGECATEGORY": {
+      "sample_values": [
+        "Usage",
+        "Usage",
+        "Usage",
+        "Usage",
+        "Usage"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 2,
+      "ai_description": "The category of the charge, indicating the type of usage.",
+      "semantic_type": "Categorical"
+    },
+    "CHARGECLASS": {
+      "sample_values": [],
+      "null_percentage": "100.00%",
+      "distinct_values": 0,
+      "ai_description": "The classification of charges applied to the usage in the Azure cost reporting.",
+      "semantic_type": "Categorical"
+    },
+    "CHARGEDESCRIPTION": {
+      "sample_values": [
+        "Standard SSD Managed Disks - Snapshots - LRS - Snapshots - AU East",
+        "Azure Data Factory v2 - Cloud - Data Movement",
+        "Standard HDD Managed Disks - Snapshots - ZRS - Snapshots - AU East",
+        "Key Vault - Operations",
+        "Files - List Operations"
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 380,
+      "ai_description": "The description of the charges associated with Azure services and resources.",
+      "semantic_type": "Text"
+    },
+    "CHARGEFREQUENCY": {
+      "sample_values": [
+        "Usage-Based",
+        "Usage-Based",
+        "Usage-Based",
+        "Usage-Based",
+        "Usage-Based"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 2,
+      "ai_description": "The frequency at which charges are applied for usage of the service.",
+      "semantic_type": "Categorical"
+    },
+    "CHARGEPERIODEND": {
+      "sample_values": [
+        "2025-08-03 00:00:00.000",
+        "2025-08-21 00:00:00.000",
+        "2025-07-11 00:00:00.000",
+        "2025-07-20 00:00:00.000",
+        "2025-08-01 00:00:00.000"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 92,
+      "ai_description": "The end date and time for the charge period.",
+      "semantic_type": "Date"
+    },
+    "CHARGEPERIODSTART": {
+      "sample_values": [
+        "2025-09-17 00:00:00.000",
+        "2025-08-23 00:00:00.000",
+        "2025-08-03 00:00:00.000",
+        "2025-07-15 00:00:00.000",
+        "2025-09-18 00:00:00.000"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 92,
+      "ai_description": "The start date and time of the charge period for Azure cost usage.",
+      "semantic_type": "Date"
+    },
+    "COMMITMENTDISCOUNTCATEGORY": {
+      "sample_values": [
+        "Spend",
+        "Spend",
+        "Spend",
+        "Spend",
+        "Spend"
+      ],
+      "null_percentage": "93.20%",
+      "distinct_values": 2,
+      "ai_description": "The category of commitment discounts applied to costs.",
+      "semantic_type": "Categorical"
+    },
+    "COMMITMENTDISCOUNTID": {
+      "sample_values": [
+        "/providers/Microsoft.BillingBenefits/savingsPlanOrders/7r3o0rn0-6oqr-95no-43s6-3pp4351530s3/fnivatfCynaf/pn932636-39s1-9p27-n69o-053q1o9qs739",
+        "/providers/Microsoft.BillingBenefits/savingsPlanOrders/19ss585n-0rn4-9479-nr93-q3o8r0qn39s6/fnivatfCynaf/62q061qo-06oo-9rs7-367s-o5q6oqn6r9pr",
+        "/providers/Microsoft.BillingBenefits/savingsPlanOrders/7r3o0rn0-6oqr-95no-43s6-3pp4351530s3/fnivatfCynaf/pn932636-39s1-9p27-n69o-053q1o9qs739",
+        "/providers/Microsoft.BillingBenefits/savingsPlanOrders/7r3o0rn0-6oqr-95no-43s6-3pp4351530s3/fnivatfCynaf/pn932636-39s1-9p27-n69o-053q1o9qs739",
+        "/providers/Microsoft.Capacity/reservationOrders/cafc8c0a-5ae1-44c9-817a-d5079dbe546d/reservations/81673pon-5sss-987s-n8r7-rqop1ns27r2q"
+      ],
+      "null_percentage": "93.20%",
+      "distinct_values": 7,
+      "ai_description": "The identifier for various commitment discounts related to billing benefits and reservation orders in Azure.",
+      "semantic_type": "Identifier"
+    },
+    "COMMITMENTDISCOUNTNAME": {
+      "sample_values": [
+        "Compute_SavingsPlan_01-09-2023_16-00",
+        "Compute_SavingsPlan_15-12-2023_09-35",
+        "Compute_SavingsPlan_01-09-2023_16-00",
+        "Compute_SavingsPlan_01-09-2023_16-00",
+        "Compute_SavingsPlan_01-09-2023_16-00"
+      ],
+      "null_percentage": "93.20%",
+      "distinct_values": 7,
+      "ai_description": "The name of the commitment discount plan applied to the cost usage in Azure.",
+      "semantic_type": "Text"
+    },
+    "COMMITMENTDISCOUNTSTATUS": {
+      "sample_values": [
+        "Unused",
+        "Used",
+        "Used",
+        "Used",
+        "Used"
+      ],
+      "null_percentage": "93.20%",
+      "distinct_values": 2,
+      "ai_description": "The status of commitment discounts applied to the service usage.",
+      "semantic_type": "Categorical"
+    },
+    "COMMITMENTDISCOUNTTYPE": {
+      "sample_values": [
+        "Savings Plan",
+        "Savings Plan",
+        "Savings Plan",
+        "Savings Plan",
+        "Savings Plan"
+      ],
+      "null_percentage": "93.20%",
+      "distinct_values": 2,
+      "ai_description": "The type of commitment discount applied to the usage costs.",
+      "semantic_type": "Categorical"
+    },
+    "CONSUMEDQUANTITY": {
+      "sample_values": [
+        1.0,
+        0.032258064516129,
+        0.116669,
+        2695.0,
+        0.500009
       ],
       "null_percentage": "0.02%",
-      "distinct_values": 47
+      "distinct_values": 2610,
+      "ai_description": "The quantity of resources consumed during usage.",
+      "semantic_type": "Numerical"
     },
-    "RegionName": {
+    "CONSUMEDUNIT": {
+      "sample_values": [
+        "Units",
+        "Hours",
+        "Hours",
+        "Units/Month",
+        "Units/Month"
+      ],
+      "null_percentage": "0.02%",
+      "distinct_values": 12,
+      "ai_description": "The quantity of resources consumed, which may be reported in various units such as hours or units per month.",
+      "semantic_type": "Categorical"
+    },
+    "CONTRACTEDCOST": {
+      "sample_values": [
+        5.75865e-07,
+        7.6581e-06,
+        2.9369115e-05,
+        0.306324,
+        0.004149677419355
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3144,
+      "ai_description": "The total contracted cost associated with Azure services in USD.",
+      "semantic_type": "Numerical"
+    },
+    "CONTRACTEDUNITPRICE": {
+      "sample_values": [
+        48.6018,
+        0.00046029,
+        0.3194895,
+        48.6018,
+        0.005628
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 259,
+      "ai_description": "The contracted unit price for the service expressed in currency.",
+      "semantic_type": "Numerical"
+    },
+    "EFFECTIVECOST": {
+      "sample_values": [
+        0.306324,
+        9.5676e-06,
+        0.0120062124,
+        0.0,
+        0.000274975729273
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3141,
+      "ai_description": "The effective cost of the service in USD.",
+      "semantic_type": "Numerical"
+    },
+    "INVOICEISSUERNAME": {
+      "sample_values": [
+        "Microsoft",
+        "Microsoft",
+        "Microsoft",
+        "Microsoft",
+        "Microsoft"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The name of the issuer of the invoice.",
+      "semantic_type": "Categorical"
+    },
+    "LISTCOST": {
+      "sample_values": [
+        0.0,
+        0.004155519234119,
+        0.00012572,
+        0.0,
+        0.1755633264
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3133,
+      "ai_description": "The cost associated with Azure resource usage in monetary units.",
+      "semantic_type": "Numerical"
+    },
+    "LISTUNITPRICE": {
+      "sample_values": [
+        0.02245,
+        56.89,
+        0.2245,
+        0.6465,
+        0.0
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 249,
+      "ai_description": "The unit price of the services in USD.",
+      "semantic_type": "Numerical"
+    },
+    "PRICINGCATEGORY": {
+      "sample_values": [
+        "Standard",
+        "Standard",
+        "Standard",
+        "Standard",
+        "Standard"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 3,
+      "ai_description": "The category of pricing associated with the service usage.",
+      "semantic_type": "Categorical"
+    },
+    "PRICINGQUANTITY": {
+      "sample_values": [
+        0.0233,
+        0.0002,
+        0.241632,
+        0.006,
+        0.6766746211797
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 2481,
+      "ai_description": "The quantity of pricing units used for the service.",
+      "semantic_type": "Numerical"
+    },
+    "PRICINGUNIT": {
+      "sample_values": [
+        "Units/Hour",
+        "GB",
+        "Units/Month",
+        "GB",
+        "Units"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 12,
+      "ai_description": "The unit of measure for pricing, indicating the basis of cost calculation such as per hour, per gigabyte, or per month.",
+      "semantic_type": "Categorical"
+    },
+    "PROVIDERNAME": {
+      "sample_values": [
+        "Microsoft",
+        "Microsoft",
+        "Microsoft",
+        "Microsoft",
+        "Microsoft"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 1,
+      "ai_description": "The name of the cloud service provider associated with the cost usage data.",
+      "semantic_type": "Categorical"
+    },
+    "PUBLISHERNAME": {
+      "sample_values": [
+        "Microsoft",
+        "Microsoft",
+        "Microsoft",
+        "Microsoft",
+        "Microsoft"
+      ],
+      "null_percentage": "0.22%",
+      "distinct_values": 3,
+      "ai_description": "The name of the publisher providing the service.",
+      "semantic_type": "Categorical"
+    },
+    "REGIONID": {
+      "sample_values": [
+        "australiaeast",
+        "australiaeast",
+        "australiaeast",
+        "australiaeast",
+        "australiaeast"
+      ],
+      "null_percentage": "0.00%",
+      "distinct_values": 12,
+      "ai_description": "The identifier for the region where the cost usage is reported.",
+      "semantic_type": "Identifier"
+    },
+    "REGIONNAME": {
       "sample_values": [
         "Australia East",
         "Australia East",
@@ -66,29 +1021,152 @@
         "Australia East"
       ],
       "null_percentage": "0.00%",
-      "distinct_values": 12
+      "distinct_values": 12,
+      "ai_description": "The name of the region where the costs were incurred.",
+      "semantic_type": "Categorical"
     },
-    "EffectiveCost": {
+    "RESOURCEID": {
       "sample_values": [
-        1.496043e-05,
-        0.00319549811055,
-        0.001426698,
-        2.57542348e-07,
-        0.037392670788
+        "/subscriptions/8o853q95-5r51-9398-o67p-s2608113o3s0/resourcegroups/hng-pf-nfr-vasen-et-nhrn/providers/microsoft.web/sites/nhguzna-hng",
+        "/subscriptions/5q8nsqss-p8o5-935r-o8q2-1p1prnr9r75s/resourcegroups/et-flq-ceq-pne-qngn-znantrzrag/providers/microsoft.datafactory/factories/ebnqfnsrglnanylgvpf-qs-ceq",
+        "/subscriptions/8n8s6ps8-r399-99qn-o75o-4s9o715s71p8/resourcegroups/vffv-rhf-nep/providers/microsoft.azurearcdata/sqlserverinstances/hqpjqofcp576",
+        "/subscriptions/6nr30q48-ns0n-9212-4642-742296s2o292/resourcegroups/qfv-fqi-bqe-vuo-etc-556/providers/microsoft.web/sites/ybtvp-fqi-nvf-pvs-556",
+        "/subscriptions/r47s4p4s-0pqq-94s8-n076-08978sn8r5nq/resourcegroups/funerq-et/providers/microsoft.network/privatednszones/cevingryvax.inhygpber.nmher.arg"
+      ],
+      "null_percentage": "0.02%",
+      "distinct_values": 3872,
+      "ai_description": "The unique identifier for various Azure resources, including subscriptions, resource groups, and specific resource types.",
+      "semantic_type": "Identifier"
+    },
+    "RESOURCENAME": {
+      "sample_values": [
+        "qyffcqbaegsfgngr556",
+        "eyk",
+        "gsafjbarqevkqpj537866925",
+        "6n4297n4n5p49n19n796p63pnn3q1383",
+        "Nalpybhq_Tbyqra_Vzntrf_cebq/Tbyqra_Vzntr_Jvaqbjf_7564/7577.53.58666770"
+      ],
+      "null_percentage": "0.02%",
+      "distinct_values": 3955,
+      "ai_description": "The name of the resource associated with the Azure cost usage.",
+      "semantic_type": "Text"
+    },
+    "RESOURCETYPE": {
+      "sample_values": [
+        "App Service web app",
+        "Disk",
+        "Disk",
+        "Virtual machine",
+        "Virtual machine"
+      ],
+      "null_percentage": "0.02%",
+      "distinct_values": 73,
+      "ai_description": "The type of resource associated with the cost usage, such as virtual machines or app services.",
+      "semantic_type": "Categorical"
+    },
+    "SERVICECATEGORY": {
+      "sample_values": [
+        "Storage",
+        "Storage",
+        "Compute",
+        "Integration",
+        "Networking"
       ],
       "null_percentage": "0.00%",
-      "distinct_values": 3141
+      "distinct_values": 13,
+      "ai_description": "The category of the Azure service being utilized, such as Storage, Compute, or Networking.",
+      "semantic_type": "Categorical"
     },
-    "BillingPeriodStart": {
+    "SERVICENAME": {
       "sample_values": [
-        "2025-09-01 00:00:00.000",
-        "2025-09-01 00:00:00.000",
-        "2025-09-01 00:00:00.000",
-        "2025-08-01 00:00:00.000",
-        "2025-07-01 00:00:00.000"
+        "Azure Site Recovery",
+        "Key Vault",
+        "Virtual Machines",
+        "Virtual Machines",
+        "Virtual Machines"
+      ],
+      "null_percentage": "0.02%",
+      "distinct_values": 47,
+      "ai_description": "The name of the Azure service being utilized.",
+      "semantic_type": "Categorical"
+    },
+    "SKUID": {
+      "sample_values": [
+        616488981.0,
+        1018109.0,
+        1073377.0,
+        616488981.0,
+        616157833.0
+      ],
+      "null_percentage": "0.10%",
+      "distinct_values": 379,
+      "ai_description": "The unique identifier for each SKU in the Azure Cost Usage table.",
+      "semantic_type": "Identifier"
+    },
+    "SKUPRICEID": {
+      "sample_values": [
+        616281125,
+        1011515,
+        611182811,
+        611182811,
+        1010515
       ],
       "null_percentage": "0.00%",
-      "distinct_values": 3
+      "distinct_values": 380,
+      "ai_description": "The unique identifier for SKU pricing related to Azure services.",
+      "semantic_type": "Identifier"
+    },
+    "SUBACCOUNTID": {
+      "sample_values": [
+        "/subscriptions/non02on6-2436-986n-o8r0-qq4s5p89s69p",
+        "/subscriptions/6nr30q48-ns0n-9212-4642-742296s2o292",
+        "/subscriptions/n38063sp-q7q6-9614-non5-s015p29qr98n",
+        "/subscriptions/1s44210s-84r3-96ps-4o3o-63n4pr2p3o1o",
+        "/subscriptions/q6rr6161-5rrr-9n4r-3r11-qq434r1r49o0"
+      ],
+      "null_percentage": "0.04%",
+      "distinct_values": 150,
+      "ai_description": "A unique identifier for each subscription account in the Azure cost usage report.",
+      "semantic_type": "Identifier"
+    },
+    "SUBACCOUNTNAME": {
+      "sample_values": [
+        "ezf-nz-pyqp-cebq",
+        "gsafj-rqnf-nanylgvpf-abacebq",
+        "fz-fvf-vprageny-cebq",
+        "GsAFJ BF BQY AbaCebq",
+        "gsafj-nalpybhq-qri56-abacebq"
+      ],
+      "null_percentage": "0.04%",
+      "distinct_values": 150,
+      "ai_description": "The name of the subaccount associated with Azure cost usage.",
+      "semantic_type": "Text"
+    },
+    "SUBACCOUNTTYPE": {
+      "sample_values": [
+        "Subscription",
+        "Subscription",
+        "Subscription",
+        "Subscription",
+        "Subscription"
+      ],
+      "null_percentage": "0.04%",
+      "distinct_values": 1,
+      "ai_description": "The type of subscription account associated with the cost usage.",
+      "semantic_type": "Categorical"
+    },
+    "TAGS": {
+      "sample_values": [
+        "{\n  \"application\": \"\",\n  \"environment\": \"Dev\"\n}",
+        "{\n  \"application\": \"gsafj-nqfg-penfuyvax7h-abacebq\",\n  \"environment\": \"uat\"\n}",
+        "{\n  \"environment\": \"Production\"\n}",
+        "{\n  \"application\": \"FLG577667\",\n  \"cost_center\": \"C.5523824\"\n}",
+        "{\n  \"application\": \"gsafj-gf-nffrgivrj-abacebq\"\n}"
+      ],
+      "null_percentage": "1.96%",
+      "distinct_values": 582,
+      "ai_description": "A JSON representation of tags associated with cloud resources, indicating their application, environment, and possibly other attributes like cost center.",
+      "semantic_type": "Text"
     }
   }
 }
