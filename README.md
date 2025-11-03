@@ -52,20 +52,20 @@ cd Text_sql_Ai-Cloud-Billing
 ### 🧱 2. Create and Activate a Virtual Environment
 🐧 On Linux/macOS:
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ````
 🪟 On Windows:
 ```bash
-python -m venv venv
-venv\Scripts\activate
+python -m venv .venv
+.venv\Scripts\activate
 ````
 ### 📦 3. Install Dependencies
 This installs all the required Python libraries listed in requirements.txt.
 ```bash
 pip install -r requirements.txt
 ````
-### 📦 4. Create a .env file
+### 📦 4. Create a .env file in Text_sql_Ai-Cloud-Billing
 This would hold your openai_api_key, paste it 
 ```bash
 OPENAI_API_KEY = "YOUR_OPENAI_API_KEY" 
