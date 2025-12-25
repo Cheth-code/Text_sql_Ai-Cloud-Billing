@@ -34,12 +34,12 @@ It uses:
 | Frontend | Streamlit |
 | Database | SQLite |
 | AI Engine | OpenAI / LLM via LangChain |
-| Metadata Profiling | Pandas Profiling / YData |
 | Deployment | Localhost |
 
 ---
 
-## 🚀 How to Run This Project (Step-by-Step for Beginners)
+## 🚀 How to Run This Project 
+
 
 ### 🪜 1. Clone the Repository
 
@@ -57,20 +57,20 @@ source .venv/bin/activate
 ````
 🪟 On Windows:
 ```bash
-python -m venv .venv
+uv venv
 .venv\Scripts\activate
 ````
 ### 📦 3. Install Dependencies
-This installs all the required Python libraries listed in requirements.txt.
+This installs all the required lib
 ```bash
-pip install -r requirements.txt
+uv sync
 ````
 ### 📦 4. Create a .env file in Text_sql_Ai-Cloud-Billing
 This would hold your openai_api_key, paste it 
 ```bash
 OPENAI_API_KEY = "YOUR_OPENAI_API_KEY" 
 ````
-### ⚙️ 5. Run the load_data.py
+##  Now for the 3 Step-process to run this
 Make sure the datasets are in util file
 This loads the given_datasets.csv to sqlite database
 got to util
@@ -79,38 +79,34 @@ cd util
 ````
 run load_data.py
 ```bash
-python -m load_data.py
+uv run load_data.py
 ````
-cloud_costs.db get's created in the util folder
+cloud_costs.db gets created 
 
-### ⚙️ 6. Run the metadata_by_ai.py
+### NEXT Run the metadata_by_ai.py
 This creates a sematic_metadata.json by analysing all the cloumns of the cloud_costs.db
 with an AI description
 
-in the util folder
 run metadata_by_ai.py
 ```bash
-python -m metadata_by_ai.py
+uv run metadata_by_ai.py
 ````
 sematic_metadata.json is created
 
-go back to root dir 
-```bash
-cd ..
-````
-### ⚙️ 7. Run the Backend (FastAPI)
+
+### ⚙️ NOW Run the Backend (FastAPI)
 This launches the backend API, which processes questions and returns SQL results.
 
 run the app.py
 ```bash
-python -m app.py
+uv run app.py
 ````
 
 Once it’s running, you should see something like:
 ```bash
 Application running on http://127.0.0.1:8000
 ````
-### 💬 6. Run the Frontend (Streamlit)
+### 💬 Run the Frontend (Streamlit)
 This starts the chat-style user interface that talks to the FastAPI backend.
 ```bash
 streamlit run chat_app.py
@@ -145,24 +141,5 @@ Try asking:
 INFO:     Started reloader process [58964] using StatReload
 ERROR:    Error loading ASGI app. Attribute “app” not found in module “app”.
 ````
-if uv is installed run this 
-```bash
-python -m app
-````
-if not  
-```bash
-python -m app.py
-````
-if an error on database 
-```bash
-    raise FileNotFoundError(f”Database ‘{DB_PATH}’ not found. Please run ‘load_data.py’ first.“)
-FileNotFoundError: Database ‘cloud_costs.db’ not found. Please run ‘load_data.py’ first
-````
-cd to utils
-```bash
-cd utils
-````
-```bash
-python -m load_data.py 
 ````
 cloud_costs.db is created 
