@@ -85,11 +85,6 @@ uv run metadata_by_ai.py
 ````
 sematic_metadata.json is created
 
-### ⚙️ NOW Go back
-```bash
-cd ..
-````
-
 ### ⚙️ NOW Run the Backend (FastAPI)
 This launches the backend API, which processes questions and returns SQL results.
 
