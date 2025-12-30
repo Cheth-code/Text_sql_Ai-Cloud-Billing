@@ -50,18 +50,13 @@ git clone https://github.com/Cheth-code/Text_sql_Ai-Cloud-Billing.git
 cd Text_sql_Ai-Cloud-Billing
 ````
 ### 🧱 2. Create and Activate a Virtual Environment
-🐧 On Linux/macOS:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-````
-🪟 On Windows:
+
 ```bash
 uv venv
 .venv\Scripts\activate
 ````
 ### 📦 3. Install Dependencies
-This installs all the required lib
+This installs all the required libraires
 ```bash
 uv sync
 ````
@@ -84,7 +79,7 @@ uv run load_data.py
 cloud_costs.db gets created 
 
 ### NEXT Run the metadata_by_ai.py
-This creates a sematic_metadata.json by analysing all the cloumns of the cloud_costs.db
+This creates a sematic_metadata.json by analysing all the columns of the cloud_costs.db
 with an AI description
 
 run metadata_by_ai.py
@@ -93,11 +88,15 @@ uv run metadata_by_ai.py
 ````
 sematic_metadata.json is created
 
+### ⚙️ NOW Go back
+```bash
+cd ..
+````
 
 ### ⚙️ NOW Run the Backend (FastAPI)
 This launches the backend API, which processes questions and returns SQL results.
 
-run the app.py
+Run the app.py
 ```bash
 uv run app.py
 ````
