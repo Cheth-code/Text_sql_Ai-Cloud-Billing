@@ -68,10 +68,7 @@ OPENAI_API_KEY = "YOUR_OPENAI_API_KEY"
 ##  Now for the 3 Step-process to run this
 Make sure the datasets are in util file
 This loads the given_datasets.csv to sqlite database
-got to util
-```bash
-cd util
-````
+Add the CSV Datasets to the util folder
 run load_data.py
 ```bash
 uv run load_data.py
