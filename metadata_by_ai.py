@@ -1,9 +1,9 @@
 import sqlite3
 import os
 import json
-from openai import OpenAI  # <-- Import OpenAI
+from openai import OpenAI  
 import time
-from dotenv import load_dotenv  # <-- Import dotenv
+from dotenv import load_dotenv  
 from pathlib import Path
 
 # --- 1. Configuration ---  # <-- Load variables from .env file
@@ -18,7 +18,7 @@ FINAL_OUTPUT_FILE = "semantic_metadata.json"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # <-- Load key from environment
 
 # --- 2. Setup OpenAI API ---
-if not OPENAI_API_KEY:  # <-- Updated check
+if not OPENAI_API_KEY:  
     print("=" * 50)
     print("ERROR: OPENAI_API_KEY not found.")
     print("Please create a .env file and add your key (e.g., OPENAI_API_KEY=sk-...)")
@@ -50,7 +50,6 @@ except Exception as e:
 print(f"✅ Database '{DB_PATH}' connected.")
 
 # --- 4. Initialize Results Dictionary ---
-# This will be populated automatically by the auto-discovery phase
 profile_results = {}
 
 # --- 5. Define Helper Functions ---

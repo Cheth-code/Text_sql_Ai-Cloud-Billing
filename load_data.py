@@ -4,8 +4,8 @@ import sqlite3
 import os
 
 # --- Configuration ---
-AWS_CSV_PATH = 'aws_cost_usage.csv'
-AZURE_CSV_PATH = 'azure_cost_usage.csv'
+AWS_CSV_PATH = 'util/aws_cost_usage.csv'
+AZURE_CSV_PATH = 'util/azure_cost_usage.csv'
 # Main database
 DB_PATH = 'cloud_costs.db' 
 AWS_TABLE_NAME = 'aws_cost_usage'
@@ -15,7 +15,7 @@ AZURE_TABLE_NAME = 'azure_cost_usage'
 def load_csv_to_sqlite(csv_path, table_name, db_path):
     """Loads a CSV file into a specific table in an SQLite database."""
     if not os.path.exists(csv_path):
-        print(f"Error: {csv_path} not found. Please run create_mock_data.py first.")
+        print(f"Error: {csv_path} not found. Please import the datasets.")
         return
 
     try:
